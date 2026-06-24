@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDK 1409 — Документация</title>
+  <link rel="stylesheet" href="../static/main.css">
+  <style>
+    .doc-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.5s ease-out;
+    }
+    .doc-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .doc-header p { color: var(--text-muted); font-size: 1rem; }
+    .doc-section { margin-bottom: 2.5rem; }
+    .doc-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .doc-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+      color: var(--text-secondary);
+    }
+    .doc-section h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0.8rem 0 0.4rem;
+    }
+    .doc-section p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .doc-table th,
+    .doc-table td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .doc-table th {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .doc-table td { color: var(--text-secondary); }
+    .doc-table code {
+      background: var(--bg-secondary);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      color: var(--text-primary);
+    }
+    .doc-code {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 0.8rem 0;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+    .doc-code .tag    { color: #7ec8e3; }
+    .doc-code .attr   { color: #d4a0e0; }
+    .doc-code .str    { color: #a8d5a2; }
+    .doc-code .comm   { color: var(--text-muted); font-style: italic; }
+    .doc-code .key    { color: #e3b78c; }
+    .doc-code .pun    { color: var(--text-secondary); }
+    .doc-inline-code {
+      background: var(--bg-secondary);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85em;
+      color: var(--text-primary);
+    }
+    .doc-tree {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      white-space: pre;
+      overflow-x: auto;
+    }
+    .doc-badge {
+      display: inline-block;
+      background: rgba(68, 70, 225, 0.15);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .doc-method {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: #7ec8e3;
+    }
+    .doc-hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 2rem 0;
+    }
+    hr + .doc-section h2 { border-bottom: none; }
+    .doc-tree .hl { color: var(--accent); }
+    ul { color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; }
+    li { margin-bottom: 0.3rem; }
+    a { color: var(--accent); }
+    strong { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 800px;">
+
+    <div class="doc-header">
+      <h1>SDK 1409</h1>
+      <p>Готовая библиотека стилей и JS-компонентов для проекта <strong>1409</strong></p>
+      <div style="display: flex; gap: 8px; justify-content: center; margin-top: 12px;">
+        <span class="doc-badge">HTML</span>
+        <span class="doc-badge">CSS</span>
+        <span class="doc-badge">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i data-lucide="rocket"></i> Быстрый старт</div>
+
+      <h3>1. Подключите CSS</h3>
+      <div class="doc-code">&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"static/main.css"</span>&gt;</div>
+
+      <h3>2. Подключите JS</h3>
+      <div class="doc-code">&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"main.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</div>
+
+      <h3>3. Инициализируйте SDK</h3>
+      <div class="doc-code">&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"main.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">script</span>&gt;
+  SDK1409.initPage();
+&lt;/<span class="tag">script</span>&gt;</div>
+
+      <p>Опционально — иконки Lucide:</p>
+      <div class="doc-code">&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/lucide@latest/dist/umd/lucide.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i data-lucide="file-text"></i> Полный пример</div>
+
+      <div class="doc-code">&lt;<span class="tag">!DOCTYPE html</span>&gt;
+&lt;<span class="tag">html</span> <span class="attr">lang</span>=<span class="str">"ru"</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+  &lt;<span class="tag">meta</span> <span class="attr">charset</span>=<span class="str">"UTF-8"</span>&gt;
+  &lt;<span class="tag">meta</span> <span class="attr">name</span>=<span class="str">"viewport"</span> <span class="attr">content</span>=<span class="str">"width=device-width, initial-scale=1.0"</span>&gt;
+  &lt;<span class="tag">title</span>&gt;Мой проект&lt;/<span class="tag">title</span>&gt;
+  &lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://unpkg.com/lucide@latest/dist/umd/lucide.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+  &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"static/main.css"</span>&gt;
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"container"</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"card"</span>&gt;
+      &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"section-title"</span>&gt;
+        &lt;<span class="tag">i</span> <span class="attr">data-lucide</span>=<span class="str">"settings"</span>&gt;&lt;/<span class="tag">i</span>&gt; Моя карточка
+      &lt;/<span class="tag">div</span>&gt;
+      &lt;<span class="tag">p</span>&gt;Контент внутри карточки&lt;/<span class="tag">p</span>&gt;
+      &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-primary"</span> <span class="attr">onclick</span>=<span class="str">"SDK1409.openModal('my-modal')"</span>&gt;
+        &lt;<span class="tag">i</span> <span class="attr">data-lucide</span>=<span class="str">"info"</span>&gt;&lt;/<span class="tag">i</span>&gt; Открыть
+      &lt;/<span class="tag">button</span>&gt;
+    &lt;/<span class="tag">div</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"modal-overlay"</span> <span class="attr">id</span>=<span class="str">"my-modal"</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"modal-content"</span>&gt;
+      &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"modal-title"</span>&gt;Привет!&lt;/<span class="tag">div</span>&gt;
+      &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-secondary"</span> <span class="attr">onclick</span>=<span class="str">"SDK1409.closeModal('my-modal')"</span>&gt;Закрыть&lt;/<span class="tag">button</span>&gt;
+    &lt;/<span class="tag">div</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+
+  &lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"main.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+  &lt;<span class="tag">script</span>&gt;SDK1409.initPage();&lt;/<span class="tag">script</span>&gt;
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;</div>
+    </div>
+
+    <!-- API -->
+    <div class="card">
+      <div class="section-title"><i data-lucide="code"></i> API</div>
+
+      <h3>Тема</h3>
+      <table class="doc-table">
+        <tr><th>Метод</th><th>Описание</th></tr>
+        <tr><td><code>SDK1409.initTheme()</code></td><td>Загружает тему из localStorage, устанавливает data-theme</td></tr>
+        <tr><td><code>SDK1409.toggleTheme()</code></td><td>Переключает dark/light, сохраняет в localStorage</td></tr>
+        <tr><td><code>SDK1409.setTheme('dark'|'light')</code></td><td>Устанавливает тему принудительно</td></tr>
+      </table>
+
+      <h3>Модалки</h3>
+      <table class="doc-table">
+        <tr><th>Метод</th><th>Описание</th></tr>
+        <tr><td><code>SDK1409.openModal(id)</code></td><td>Показывает модальное окно (добавляет класс .shown)</td></tr>
+        <tr><td><code>SDK1409.closeModal(id)</code></td><td>Скрывает модальное окно</td></tr>
+      </table>
+
+      <h3>Утилиты</h3>
+      <table class="doc-table">
+        <tr><th>Метод</th><th>Описание</th></tr>
+        <tr><td><code>SDK1409.escapeHtml(str)</code></td><td>Экранирует HTML-сущности в строке</td></tr>
+        <tr><td><code>SDK1409.copyText(text)</code></td><td>Копирует текст в буфер обмена</td></tr>
+        <tr><td><code>SDK1409.showLoader(containerId, message?)</code></td><td>Показывает индикатор загрузки</td></tr>
+        <tr><td><code>SDK1409.showEmpty(containerId, message?)</code></td><td>Показывает заглушку «нет данных»</td></tr>
+      </table>
+
+      <h3>Формы и данные</h3>
+      <table class="doc-table">
+        <tr><th>Метод</th><th>Описание</th></tr>
+        <tr><td><code>SDK1409.populateSelect(selectId, items, selectedValue?)</code></td><td>Заполняет &lt;select&gt; массивом значений</td></tr>
+        <tr><td><code>SDK1409.populateClasses(numSelector, letterSelector, num?, letter?)</code></td><td>Заполняет селекты классов (5–11) и букв (А–Я)</td></tr>
+      </table>
+
+      <h3>Рендеринг</h3>
+      <table class="doc-table">
+        <tr><th>Метод</th><th>Описание</th></tr>
+        <tr><td><code>SDK1409.renderStudents(containerId, students[])</code></td><td>Рендерит список учащихся</td></tr>
+        <tr><td><code>SDK1409.renderLinkCard(containerId, link, createdAt?)</code></td><td>Рендерит карточку со ссылкой и кнопкой копирования</td></tr>
+      </table>
+
+      <h3>Инициализация</h3>
+      <table class="doc-table">
+        <tr><th>Метод</th><th>Описание</th></tr>
+        <tr><td><code>SDK1409.initPage()</code></td><td>Вызывает initTheme() и lucide.createIcons()</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i data-lucide="folder-tree"></i> Структура проекта</div>
+
+      <div class="doc-tree">├── <span class="hl">main.js</span>            # SDK (SDK1409)
+├── <span class="hl">demo.html</span>          # Демо-страница
+├── <span class="hl">deploy.sh</span>          # Скрипт деплоя
+├── <span class="hl">static/</span>
+│   ├── main.css        # Дизайн-система
+│   ├── favicon.png
+│   └── 1409_server_media/
+└── <span class="hl">docs/</span>
+    └── index.html      # Документация</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i data-lucide="palette"></i> Компоненты CSS</div>
+
+      <h3>Карточка (<code>.card</code>)</h3>
+      <div class="doc-code">&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"card"</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"section-title"</span>&gt;
+    &lt;<span class="tag">i</span> <span class="attr">data-lucide</span>=<span class="str">"home"</span>&gt;&lt;/<span class="tag">i</span>&gt; Заголовок
+  &lt;/<span class="tag">div</span>&gt;
+  &lt;<span class="tag">p</span>&gt;Контент&lt;/<span class="tag">p</span>&gt;
+&lt;/<span class="tag">div</span>&gt;</div>
+
+      <h3>Кнопки</h3>
+      <div class="doc-code">&lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-primary"</span>&gt;Основная&lt;/<span class="tag">button</span>&gt;
+&lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-secondary"</span>&gt;Вторичная&lt;/<span class="tag">button</span>&gt;
+&lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-danger"</span>&gt;Опасная&lt;/<span class="tag">button</span>&gt;
+&lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-sm btn-primary"</span>&gt;Маленькая&lt;/<span class="tag">button</span>&gt;</div>
+
+      <h3>Навигация</h3>
+      <div class="doc-code">&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"top-nav"</span>&gt;
+  &lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="str">"#"</span> <span class="attr">class</span>=<span class="str">"nav-close"</span>&gt;
+    &lt;<span class="tag">i</span> <span class="attr">data-lucide</span>=<span class="str">"arrow-left"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+  &lt;/<span class="tag">a</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"nav-group"</span>&gt;
+    &lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="str">"#"</span> <span class="attr">class</span>=<span class="str">"nav-tab active"</span>&gt;Вкладка 1&lt;/<span class="tag">a</span>&gt;
+    &lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="str">"#"</span> <span class="attr">class</span>=<span class="str">"nav-tab"</span>&gt;Вкладка 2&lt;/<span class="tag">a</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+&lt;/<span class="tag">div</span>&gt;</div>
+
+      <h3>Переключатель темы</h3>
+      <div class="doc-code">&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"toggle-item"</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"toggle-info"</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"toggle-title"</span>&gt;Тёмная тема&lt;/<span class="tag">div</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"toggle-hint"</span>&gt;Переключить оформление&lt;/<span class="tag">div</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+  &lt;<span class="tag">label</span> <span class="attr">class</span>=<span class="str">"switch"</span>&gt;
+    &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="str">"checkbox"</span> <span class="attr">id</span>=<span class="str">"theme-toggle-switch"</span>
+           <span class="attr">onchange</span>=<span class="str">"SDK1409.toggleTheme()"</span>&gt;
+    &lt;<span class="tag">span</span> <span class="attr">class</span>=<span class="str">"slider"</span>&gt;&lt;/<span class="tag">span</span>&gt;
+  &lt;/<span class="tag">label</span>&gt;
+&lt;/<span class="tag">div</span>&gt;</div>
+
+      <h3>Модальное окно</h3>
+      <div class="doc-code">&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"modal-overlay"</span> <span class="attr">id</span>=<span class="str">"my-modal"</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"modal-content"</span>&gt;
+    &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"modal-title"</span>&gt;Заголовок&lt;/<span class="tag">div</span>&gt;
+    &lt;<span class="tag">p</span>&gt;Контент&lt;/<span class="tag">p</span>&gt;
+    &lt;<span class="tag">button</span> <span class="attr">class</span>=<span class="str">"btn btn-secondary"</span>
+            <span class="attr">onclick</span>=<span class="str">"SDK1409.closeModal('my-modal')"</span>&gt;Закрыть&lt;/<span class="tag">button</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+&lt;/<span class="tag">div</span>&gt;</div>
+
+      <h3>Список учащихся</h3>
+      <div class="doc-code">&lt;<span class="tag">div</span> <span class="attr">id</span>=<span class="str">"students-container"</span>&gt;&lt;/<span class="tag">div</span>&gt;
+&lt;<span class="tag">script</span>&gt;
+  SDK1409.renderStudents('students-container', [
+    { full_name: '<span class="str">Иванов Иван</span>', phone: '<span class="str">+7 999 123-45-67</span>', class: '<span class="str">10А</span>' },
+    { full_name: '<span class="str">Петрова Анна</span>', phone: '<span class="str">+7 999 765-43-21</span>', class: '<span class="str">11Б</span>' }
+  ]);
+&lt;/<span class="tag">script</span>&gt;</div>
+
+      <h3>Аватар</h3>
+      <div class="doc-code">&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"avatar-container"</span>&gt;
+  &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"avatar-img"</span>&gt;
+    &lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="str">"photo.jpg"</span> <span class="attr">alt</span>=<span class="str">"Аватар"</span>&gt;
+  &lt;/<span class="tag">div</span>&gt;
+  &lt;<span class="tag">label</span> <span class="attr">class</span>=<span class="str">"avatar-upload-btn"</span>&gt;
+    &lt;<span class="tag">i</span> <span class="attr">data-lucide</span>=<span class="str">"camera"</span>&gt;&lt;/<span class="tag">i</span>&gt;
+    &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="str">"file"</span> <span class="attr">accept</span>=<span class="str">"image/*"</span> <span class="attr">style</span>=<span class="str">"display:none"</span>&gt;
+  &lt;/<span class="tag">label</span>&gt;
+&lt;/<span class="tag">div</span>&gt;</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i data-lucide="upload-cloud"></i> Деплой</div>
+      <div class="doc-code">$ ./deploy.sh</div>
+      <p>Скрипт заменяет локальные пути на <code>https://sdk.my1409.ru</code>, загружает файлы на сервер и восстанавливает локальные пути.</p>
+    </div>
+
+  </div>
+  <script src="../main.js"></script>
+  <script>SDK1409.initPage();</script>
+</body>
+</html>

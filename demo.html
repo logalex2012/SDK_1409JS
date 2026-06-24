@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой проект</title>
+  <!-- Lucide для иконок (опционально) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <!-- SDK CSS -->
+  <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Карточка -->
+    <div class="card">
+      <div class="section-title">
+        <i data-lucide="settings"></i> Моя карточка
+      </div>
+      <p>Контент внутри карточки с красивым фоном</p>
+      <button class="btn btn-primary" onclick="SDK1409.openModal('my-modal')">
+        <i data-lucide="info"></i> Открыть
+      </button>
+    </div>
+  </div>
+
+  <!-- Модалка -->
+  <div class="modal-overlay" id="my-modal">
+    <div class="modal-content">
+      <div class="modal-title">Привет!</div>
+      <button class="btn btn-secondary" onclick="SDK1409.closeModal('my-modal')">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- SDK JS -->
+  <script src="main.js"></script>
+  <script>
+    SDK1409.initPage();
+  </script>
+</body>
+</html>
